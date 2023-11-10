@@ -1,0 +1,125 @@
+<div id="top-margin-3w">
+  <h1 style="padding-left: 0px; margin-top: -60px;">
+    <!-- <img  src="/assets/image//LOGO.jpg" class="header-logo"> -->
+    <img  src="/assets/image//logo1.PNG" class="header-logo">
+      
+  </h1>
+  <div class="toAlignRight"><button color="gray" matTooltip="Refresh" class="refreshButton">
+  <mat-icon class="refreshIcon" (click)="resetAll()">refresh</mat-icon>
+  </button>
+  </div>
+
+</div><div style="margin-top: -200px;" class="file-upload-container">
+  <label> Please chose the transcript file to be uploaded.</label>
+  
+<!-- <button (change)="onFileSelected($event)">
+  Choose Files</button> -->
+  <td></td>
+  <td></td>
+
+  <label for="file-input" class="btn btn-default import-button" flow-btn>
+    <input type="file"  (change)="onFileSelected($event)" />
+
+  <!-- <input type="file" id="filepicker" (change)="onFileSelected($event)" > -->
+   <!-- Please choose a file -->
+   <!-- style="visibility: hidden; position: absolute;" -->
+   <!-- <input class="form-control" type="file" 
+   (change)="onFileSelected($event)"> -->
+  </label>
+  <span style="font-size: 10px;" *ngIf="spinnerFlag">{{fileName}}</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+  <!-- <button class="import-button" style="margin-top: 10px;" (click)="resetAll()" *ngIf="spinnerFlag">
+      Reset
+    </button> -->
+    <!-- &nbsp;&nbsp;&nbsp;
+    <button class="import-button" style="margin-top: 10px;" (click)="importFile()" *ngIf="spinnerFlag">
+      Generate MoM
+    </button> -->
+
+    <td>
+    </td>
+    <td>
+      
+    </td>
+    <span *ngIf="progress && !returnedData">
+      <p class="import-status">
+        MoM generation in progress. Please wait.
+      </p>
+    </span>
+
+    
+  </div>
+  
+
+
+  <div *ngIf="returnedData" class="file-upload-container1">
+    <span class="showData" > Minutes of Meeting :
+    </span>
+
+    <textarea class="pretty-textarea">
+      {{ returnedData }}
+    </textarea>
+    <span class="showData" > Meeting Participants :
+    </span>
+
+ 
+
+
+ <mat-chip *ngFor="let word of words" (removed)="removeWord(word)">
+  {{ word }}
+  <mat-icon matChipRemove>cancel</mat-icon>
+</mat-chip>
+
+<input placeholder="Add a new mail id" [(ngModel)]="newWord" (keydown.enter)="addWord()">
+
+<td>
+</td>
+<td>
+</td>
+<div style="padding-left: 16rem">
+<button class="import-button" style="margin-top: 10px;" (click)="importFile()" *ngIf="spinnerFlag">
+  Send Email
+</button> 
+&nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;
+<button class="import-button" style="margin-top: 10px;" (click)="importFile()" *ngIf="spinnerFlag">
+  Publish to Confluence
+</button> 
+&nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;
+<button class="import-button" style="margin-top: 10px;" (click)="importFile()" *ngIf="spinnerFlag">
+  Add to Diary
+</button> 
+</div>
+
+</div>
+
+
+<!-- <mat-form-field class="chip-input">
+  <mat-chip-list #chipList>
+    <mat-chip *ngFor="let word of words; let i = index" [selectable]="true" [removable]="true" (removed)="removeWord(i)">
+      {{ word }}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+    <input placeholder="Add a word" [(ngModel)]="newWord" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="addWord()">
+  </mat-chip-list>
+</mat-form-field> -->
+
+<!-- <mat-form-field>
+  <mat-chip-list #chipList>
+    <mat-chip *ngFor="let word of words; let i = index" (click)="selectChip(i)">
+      {{ word }}
+      <mat-icon matChipRemove (click)="removeWord(i)">cancel</mat-icon>
+    </mat-chip>
+    <input placeholder="Add a word" [(ngModel)]="newWord" (matChipInputTokenEnd)="addWord()">
+  </mat-chip-list>
+</mat-form-field> -->
+
+<!-- <mat-chip-list #chipList>
+  <mat-chip *ngFor="let word of words" (removed)="removeWord(word)">
+    {{ word }}
+    <mat-icon matChipRemove>cancel</mat-icon>
+  </mat-chip>
+</mat-chip-list>
+
+<input placeholder="Add a word" [(ngModel)]="newWord" (keydown.enter)="addWord()">
+ -->
+

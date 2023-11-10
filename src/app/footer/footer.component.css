@@ -1,0 +1,25 @@
+.example-footer {
+  position: fixed;
+  bottom: 0;
+  left:0;
+  right: 0;
+  /* background: #00ABE4; */
+  /* background: #EADDCA; */
+  /* background:  #ADD8E6;  */
+  /* beige */
+  /* background-color: #E6E6FA; */
+  background-color: #FFB6C1;
+
+
+
+  /* color: #fff; */
+  color: black;
+  justify-content: center;
+  height: 30px;
+  }
+  
+.title-center {
+  text-align: center;
+  font-size: 16px;
+  padding: 6px;
+  }
