@@ -1,0 +1,20 @@
+/* .app-container {
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  } */
+  
+  .app-container {
+    /* background-color: #E9F1FA;  */
+    /* Use rgba to specify alpha (transparency) */
+    background-color: #F5F5DC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
